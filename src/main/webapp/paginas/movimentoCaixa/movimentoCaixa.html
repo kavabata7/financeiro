@@ -3,13 +3,13 @@
     <div class="panel panel-default">
         <div class="panel-body">
             <div class="row container-fluid">
-                <form name="MovimentoCaixaForm">
+                <form name="MovimentoCaixaForm"></br>
                     <input required type="date" class="form-control" ng-model="entidade.quando"/>
-                    <p ng-show="!entidade.quando" class="text text-danger">Escolha uma Data</p>
+                    <p ng-show="!entidade.quando" class="text text-danger">Escolha uma Data</p></br>
                     <input required type="text" class="form-control" ng-model="entidade.valor"/>
-                    <p ng-show="!entidade.valor" class="text text-danger">Digite um Valor</p>
+                    <p ng-show="!entidade.valor" class="text text-danger">Digite um Valor</p></br>
                     <input required type="text" class="form-control" ng-model="entidade.outro"/>
-                    <p ng-show="!entidade.outro" class="text text-danger">Digite o Movimento</p>
+                    <p ng-show="!entidade.outro" class="text text-danger">Digite o Movimento</p></br>
                     <select class="form-control" ng-model="entidade.pagamento">
                         <option>Transferencia</option>
                         <option>Desposito</option>
@@ -17,20 +17,20 @@
                         <option>Boleto</option>
                         <option>Cartão</option>
                     </select>
-                    <label>Selecione a Forma de Pagamento</label>
+                    <p ng-show="!entidade.outro" class="text text-danger">Selecione uma Forma de Pagamento</p></br>
                     <select class="form-control" ng-model="entidade.realizado">
                         <option>AGUARDANDO</option>
                         <option>SIM</option>
                         <option>NÃO</option>
                     </select>
-                    <label>Selecione o Status</label>
+                    <p ng-show="!entidade.outro" class="text text-danger">Selecione um Status</p></br>
                     <input required type="text" class="form-control" ng-model="entidade.historico"/>
-                    <p ng-show="!entidade.historico" class="text text-danger">Selecione um Historico de Caixas</p>
+                    <p ng-show="!entidade.historico" class="text text-danger">Selecione um Historico de Caixas</p></br>
                     <select class="form-control" ng-model="entidade.natureza">
                         <option>Pagamento</option>
                         <option>Transferencia</option>
                     </select>
-                    <label>Selecione a Natureza do Movimento</label>
+                    <p ng-show="!entidade.outro" class="text text-danger">Selecione a Natureza do Movimento</p></br>
                 </form>
             </div>
         </div>

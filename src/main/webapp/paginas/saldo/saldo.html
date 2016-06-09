@@ -3,11 +3,11 @@
     <div class="panel panel-default">
         <div class="panel-body">
             <div class="row container-fluid">
-                <form name="SaldoForm">
+                <form name="SaldoForm"></br>
                     <input required type="date" class="form-control" ng-model="entidade.quando"/>
-                    <label>Escolha uma Data</label>
+                    <p ng-show="!entidade.valor" class="text text-danger">Escolha uma Data</p></br>
                     <input required type="text" class="form-control" ng-model="entidade.valor"/>
-                    <p ng-show="!entidade.valor" class="text text-danger">Digite um Valor</p>
+                    <p ng-show="!entidade.valor" class="text text-danger">Digite um Valor</p></br>
                     <input required type="text" class="form-control" ng-model="entidade.caixa"/>
                     <p ng-show="!entidade.caixa" class="text text-danger">Digite o Caixa</p>
                 </form>

@@ -3,16 +3,16 @@
     <div class="panel panel-default">
         <div class="panel-body">
             <div class="row container-fluid">
-                <form name="PagamentoForm">
+                <form name="PagamentoForm"></br>
                     <input required type="date" class="form-control" ng-model="entidade.quando"/>
-                    <label>Escolha uma Data</label>
+                    <p ng-show="!entidade.outro" class="text text-danger">Escolha uma Data</p></br>
                     <input required type="text" class="form-control" ng-model="entidade.valor"/>
-                    <p ng-show="!entidade.valor" class="text text-danger">Digite um Valor</p>
+                    <p ng-show="!entidade.valor" class="text text-danger">Digite um Valor</p></br>
                     <select class="form-control" ng-model="entidade.titulo">
                         <option>PAGAR</option>
                         <option>RECEBER</option>
                     </select>
-                    <label>Escolha um Tipo</label>
+                    <p ng-show="!entidade.outro" class="text text-danger">Selecione um Tipo</p></br>
                     <select class="form-control" ng-model="entidade.formaPagamento">
                         <option>Transferencia</option>
                         <option>Desposito</option>
@@ -20,7 +20,7 @@
                         <option>Cartão</option>
                         <option>Boleto</option>
                     </select>
-                    <label>Selecione a Forma de Pagamento</label>
+                    <p ng-show="!entidade.outro" class="text text-danger">Selecione a Forma de Pagamento</p></br>
                 </form>
             </div>
         </div>

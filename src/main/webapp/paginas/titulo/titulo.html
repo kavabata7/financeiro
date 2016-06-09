@@ -3,24 +3,23 @@
     <div class="panel panel-default">
         <div class="panel-body">
             <div class="row container-fluid">
-                <form name="TituloForm">
-                    <label>Titulo:</label>
+                <form name="TituloForm"></br>
                     <input required type="date" class="form-control" ng-model="entidade.dataVencimento"/>
-                    <label>Escolha uma Data</label>
+                    <p ng-show="!entidade.outro" class="text text-danger">Escolha uma Data</p></br>
                     <select class="form-control" ng-model="entidade.pessoa">
                         <option>Fisica</option>
                         <option>Juridica</option>
                     </select>
-                    <label>Selecione uma Pessoa</label>
+                    <p ng-show="!entidade.outro" class="text text-danger">Selecione o Tipo de Pessoa</p></br>
                     <input required type="text" class="form-control" ng-model="entidade.valor"/>
-                    <p ng-show="!entidade.valor" class="text text-danger">Digite um Valor</p>
+                    <p ng-show="!entidade.valor" class="text text-danger">Digite um Valor</p></br>
                     <select class="form-control" ng-model="entidade.tipo">
                         <option>PAGAR</option>
                         <option>RECEBER</option>
                     </select>
-                    <label>Selecione um Tipo</label>
+                    <p ng-show="!entidade.outro" class="text text-danger">Selecione o Tipo de Titulo</p></br>
                     <input required type="text" class="form-control" ng-model="entidade.categoria"/>
-                    <p ng-show="!entidade.categoria" class="text text-danger">Digite uma Categoria</p>
+                    <p ng-show="!entidade.categoria" class="text text-danger">Digite uma Categoria</p></br>
                 </form>
             </div>
         </div>
