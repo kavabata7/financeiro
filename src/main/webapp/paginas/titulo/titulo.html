@@ -5,8 +5,22 @@
             <div class="row container-fluid">
                 <form name="TituloForm">
                     <label>Titulo:</label>
-                    <input required type="text" class="form-control" ng-model="entidade.nome"/>
-                    <p ng-show="!entidade.nome" class="text text-danger">Escolha um Titulo</p>
+                    <input required type="date" class="form-control" ng-model="entidade.dataVencimento"/>
+                    <label>Escolha uma Data</label>
+                    <select class="form-control" ng-model="entidade.pessoa">
+                        <option>Fisica</option>
+                        <option>Juridica</option>
+                    </select>
+                    <label>Selecione uma Pessoa</label>
+                    <input required type="text" class="form-control" ng-model="entidade.valor"/>
+                    <p ng-show="!entidade.valor" class="text text-danger">Digite um Valor</p>
+                    <select class="form-control" ng-model="entidade.tipo">
+                        <option>PAGAR</option>
+                        <option>RECEBER</option>
+                    </select>
+                    <label>Selecione um Tipo</label>
+                    <input required type="text" class="form-control" ng-model="entidade.categoria"/>
+                    <p ng-show="!entidade.categoria" class="text text-danger">Digite uma Categoria</p>
                 </form>
             </div>
         </div>

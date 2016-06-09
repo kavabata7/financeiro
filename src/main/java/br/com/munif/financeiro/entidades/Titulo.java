@@ -31,7 +31,7 @@ public class Titulo extends SuperEntidade {
     private Set<Categoria> categorias;
 
     public Titulo() {
-        categorias=new HashSet<>();
+        categorias = new HashSet<>();
         dataVencimento = new Date();
     }
 

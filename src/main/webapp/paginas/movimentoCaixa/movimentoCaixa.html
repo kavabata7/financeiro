@@ -4,9 +4,33 @@
         <div class="panel-body">
             <div class="row container-fluid">
                 <form name="MovimentoCaixaForm">
-                    <label>Movimento do Caixa:</label>
-                    <input required type="text" class="form-control" ng-model="entidade.nome"/>
-                    <p ng-show="!entidade.nome" class="text text-danger">Selecione um Historico de Caixas</p>
+                    <input required type="date" class="form-control" ng-model="entidade.quando"/>
+                    <p ng-show="!entidade.quando" class="text text-danger">Escolha uma Data</p>
+                    <input required type="text" class="form-control" ng-model="entidade.valor"/>
+                    <p ng-show="!entidade.valor" class="text text-danger">Digite um Valor</p>
+                    <input required type="text" class="form-control" ng-model="entidade.outro"/>
+                    <p ng-show="!entidade.outro" class="text text-danger">Digite o Movimento</p>
+                    <select class="form-control" ng-model="entidade.pagamento">
+                        <option>Transferencia</option>
+                        <option>Desposito</option>
+                        <option>Dinheiro</option>
+                        <option>Boleto</option>
+                        <option>Cartão</option>
+                    </select>
+                    <label>Selecione a Forma de Pagamento</label>
+                    <select class="form-control" ng-model="entidade.realizado">
+                        <option>AGUARDANDO</option>
+                        <option>SIM</option>
+                        <option>NÃO</option>
+                    </select>
+                    <label>Selecione o Status</label>
+                    <input required type="text" class="form-control" ng-model="entidade.historico"/>
+                    <p ng-show="!entidade.historico" class="text text-danger">Selecione um Historico de Caixas</p>
+                    <select class="form-control" ng-model="entidade.natureza">
+                        <option>Pagamento</option>
+                        <option>Transferencia</option>
+                    </select>
+                    <label>Selecione a Natureza do Movimento</label>
                 </form>
             </div>
         </div>

@@ -4,12 +4,12 @@
         <div class="panel-body">
             <div class="row container-fluid">
                 <form name="FisicaForm">
-                    <label>Nome</label>
-                    <input required type="text" class="form-control"  ng-model="entidade.nome"/> </br>
-                    <label>E-mail</label>
-                    <input required type="email" class="form-control" ng-model="entidade.email"/> </br>
-                    <label>CPF</label>
-                    <input required type="number" class="form-control" ng-model="entidade.cpf" placeholder="000.000.000-00"/>
+                    <input required type="text" class="form-control" ng-model="entidade.nome"/>
+                    <p ng-show="!entidade.nome" class="text text-danger">Digite um nome</p>
+                    <input required type="text" class="form-control" ng-model="entidade.email"/>
+                    <p ng-show="!entidade.email" class="text text-danger">Digite seu E-mail</p>
+                    <input required type="text" class="form-control" ng-model="entidade.cpf"/>
+                    <p ng-show="!entidade.cpf" class="text text-danger">Digite o seu CPF</p>
                 </form>
             </div>
         </div>

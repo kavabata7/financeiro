@@ -27,7 +27,7 @@ public class Principal extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Principal</title>");            
+            out.println("<title>Servlet Principal</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet Principal at " + request.getContextPath() + "</h1>");
@@ -35,6 +35,5 @@ public class Principal extends HttpServlet {
             out.println("</html>");
         }
     }
-
 
 }

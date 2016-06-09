@@ -98,10 +98,10 @@ public abstract class SuperEntidadeApi<T extends SuperEntidade> extends HttpServ
             T objeto = mapper.readValue(requisicao.getInputStream(), getClasse());
             servico.salvar(objeto);
             mapper.writeValue(resposta.getOutputStream(), objeto);
-        } else  {
+        } else {
             resposta.setStatus(400);
             mapper.writeValue(resposta.getOutputStream(), new Erro("Número de parâmetros inválido"));
-        } 
+        }
     }
 
 }

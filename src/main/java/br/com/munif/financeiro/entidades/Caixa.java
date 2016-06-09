@@ -19,8 +19,7 @@ public class Caixa extends SuperEntidade {
     public void setNome(String novoNome) {
         if (novoNome.length() > 2) {
             this.nome = novoNome;
-        }
-        else{
+        } else {
             throw new RuntimeException("Nome pequeno");
         }
     }

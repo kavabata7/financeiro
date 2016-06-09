@@ -14,6 +14,7 @@
                 <td>Natureza</td>
                 <td>Opcões</td>
             </tr>
+
             <tr ng-repeat="movimentoCaixa in dados">
                 <td>{{movimentoCaixa.quando}}</td>
                 <td>{{movimentoCaixa.valor}}</td>
@@ -23,11 +24,12 @@
                 <td>{{movimentoCaixa.realizado}}</td>
                 <td>{{movimentoCaixa.historico}}</td>
                 <td>{{movimentoCaixa.natureza}}</td>
-                
+
                 <td>
                     <button ui-sref="movimentoCaixaeditar({id: movimentoCaixa.codigo})" class="btn btn-info">Editar</button>
                     <button ng-click="remover(movimentoCaixa.codigo)" class="btn btn-danger">Remover</button>
                 </td>
+
             </tr>
         </table>
     </div>

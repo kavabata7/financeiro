@@ -7,22 +7,22 @@ import javax.persistence.Persistence;
 public class Persistencia {
 
     private static Persistencia instancia = new Persistencia();
-    
+
     public static Persistencia getInstancia() {
         return instancia;
     }
 
     private final EntityManagerFactory entityManagerFactory;
-    
+
     private ThreadLocal<EntityManager> tlem;
 
     private Persistencia() {
         entityManagerFactory = Persistence.createEntityManagerFactory("financeiroPU");
-        tlem=new ThreadLocal<>();
+        tlem = new ThreadLocal<>();
     }
 
     public EntityManager getEntityManager() {
-        if (tlem.get()==null){
+        if (tlem.get() == null) {
             tlem.set(entityManagerFactory.createEntityManager());
         }
         return tlem.get();
@@ -33,8 +33,8 @@ public class Persistencia {
     }
 
     public void closeEntityManager() {
-        if (tlem.get()!=null){
-            if (tlem.get().isOpen()){
+        if (tlem.get() != null) {
+            if (tlem.get().isOpen()) {
                 tlem.get().close();
             }
             tlem.set(null);

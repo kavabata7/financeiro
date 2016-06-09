@@ -1,48 +1,23 @@
-<<<<<<< HEAD
 <h1>Listagem de Pessoas Físicas</h1>
-=======
-<<<<<<< HEAD
-<h1>Listagem de Pessoa Fisica</h1>
-=======
-<h1>Listagem de Pessoas Físicas</h1>
->>>>>>> upstream/master
->>>>>>> 5c134bfe82ad13b13f6771967eaa0e4741c823c7
+
 <div class="row">
     <div class="col-md-12">
         <button ui-sref="fisica" class="btn btn-default">Novo</button>
         <table class="table table-hover">
             <tr>
                 <td>Nome</td>
-<<<<<<< HEAD
                 <td>Email</td>
                 <td>CPF</td>
                 <td>Opcões</td>
-=======
-<<<<<<< HEAD
-                <td>E-mail</td>
-                <td>CPF</td>
-=======
-                <td>Email</td>
-                <td>CPF</td>
-                <td>Opcões</td>
->>>>>>> upstream/master
->>>>>>> 5c134bfe82ad13b13f6771967eaa0e4741c823c7
             </tr>
+
             <tr ng-repeat="fisica in dados">
                 <td>{{fisica.nome}}</td>
                 <td>{{fisica.email}}</td>
                 <td>{{fisica.cpf}}</td>
                 <td>
                     <button ui-sref="fisicaeditar({id: fisica.codigo})" class="btn btn-info">Editar</button>
-<<<<<<< HEAD
                     <button ng-click="remover(fisica.pessoa.codigo)" class="btn btn-danger">Remover</button>
-=======
-<<<<<<< HEAD
-                    <button ng-click="remover(fisica.codigo)" class="btn btn-danger">Remover</button>
-=======
-                    <button ng-click="remover(fisica.pessoa.codigo)" class="btn btn-danger">Remover</button>
->>>>>>> upstream/master
->>>>>>> 5c134bfe82ad13b13f6771967eaa0e4741c823c7
                 </td>
             </tr>
         </table>

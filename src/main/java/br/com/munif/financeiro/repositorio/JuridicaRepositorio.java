@@ -6,19 +6,14 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-/**
- *
- * @author barizon
- */
+public class JuridicaRepositorio extends SuperEntidadeRepositorio<Juridica> {
 
-public class JuridicaRepositorio extends SuperEntidadeRepositorio<Juridica>{
-    
-    public JuridicaRepositorio(){
+    public JuridicaRepositorio() {
         super(Juridica.class);
     }
-    
+
     @Override
-    public List<Juridica> consultar(){
+    public List<Juridica> consultar() {
         EntityManager em = Persistencia.getInstancia().getEntityManager();
         Query consulta = em.createQuery("from Juridica");
         return consulta.getResultList();

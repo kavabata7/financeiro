@@ -1,19 +1,14 @@
 package br.com.munif.financeiro.repositorio;
 
-import br.com.munif.financeiro.entidades.Caixa;
 import br.com.munif.financeiro.entidades.Fisica;
 import br.com.munif.financeiro.util.Persistencia;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-/**
- *
- * @author mrroot
- */
-public class FisicaRepositorio extends SuperEntidadeRepositorio<Fisica>{
-    
-        public FisicaRepositorio() {
+public class FisicaRepositorio extends SuperEntidadeRepositorio<Fisica> {
+
+    public FisicaRepositorio() {
         super(Fisica.class);
     }
 
@@ -24,6 +19,4 @@ public class FisicaRepositorio extends SuperEntidadeRepositorio<Fisica>{
         return consulta.getResultList();
     }
 
-}
-=======
 }

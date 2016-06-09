@@ -2,7 +2,6 @@ package br.com.munif.financeiro.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import javax.persistence.EntityManager;
@@ -36,7 +35,7 @@ public class FiltroTransacoes implements Filter {
             t.printStackTrace();
         }
         Persistencia.getInstancia().closeEntityManager();
-        
+
         if (problem != null) {
             if (problem instanceof ServletException) {
                 throw (ServletException) problem;

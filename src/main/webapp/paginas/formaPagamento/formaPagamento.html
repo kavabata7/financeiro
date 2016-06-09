@@ -4,9 +4,14 @@
         <div class="panel-body">
             <div class="row container-fluid">
                 <form name="FormaPagamentoForm">
-                    <label>Forma de Pagamento:</label>
-                    <input required type="text" class="form-control" ng-model="entidade.nome"/>
-                    <p ng-show="!entidade.nome" class="text text-danger">Escolha uma Forma de Pagamento</p>
+                    <select class="form-control" ng-model="entidade.nome">
+                        <option>Transferencia</option>
+                        <option>Desposito</option>
+                        <option>Dinheiro</option>
+                        <option>Cartão</option>
+                        <option>Boleto</option>
+                    </select>
+                    <label>Selecione a Forma de Pagamento:</label>
                 </form>
             </div>
         </div>

@@ -4,12 +4,12 @@ import br.com.munif.financeiro.entidades.Caixa;
 
 import javax.servlet.annotation.WebServlet;
 
-    @WebServlet(name = "CaixaApi", urlPatterns = {"/api/caixa/*"})
-    public class CaixaApi extends SuperEntidadeApi<Caixa> {
+@WebServlet(name = "CaixaApi", urlPatterns = {"/api/caixa/*"})
+public class CaixaApi extends SuperEntidadeApi<Caixa> {
 
-        @Override
-        public Class<Caixa> getClasse() {
-            return Caixa.class;
-        }
-
+    @Override
+    public Class<Caixa> getClasse() {
+        return Caixa.class;
     }
+
+}

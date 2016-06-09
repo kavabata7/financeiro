@@ -5,20 +5,15 @@
  */
 package br.com.munif.financeiro.repositorio;
 
-import br.com.munif.financeiro.entidades.Caixa;
 import br.com.munif.financeiro.entidades.Categoria;
 import br.com.munif.financeiro.util.Persistencia;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-/**
- *
- * @author mrroot
- */
-public class CategoriaRepositorio extends SuperEntidadeRepositorio<Categoria>{
-    
-        public CategoriaRepositorio() {
+public class CategoriaRepositorio extends SuperEntidadeRepositorio<Categoria> {
+
+    public CategoriaRepositorio() {
         super(Categoria.class);
     }
 
@@ -29,5 +24,4 @@ public class CategoriaRepositorio extends SuperEntidadeRepositorio<Categoria>{
         return consulta.getResultList();
     }
 
-    
 }

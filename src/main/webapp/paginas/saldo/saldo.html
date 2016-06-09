@@ -4,9 +4,12 @@
         <div class="panel-body">
             <div class="row container-fluid">
                 <form name="SaldoForm">
-                    <label>Saldo:</label>
-                    <input required type="text" class="form-control" ng-model="entidade.nome"/>
-                    <p ng-show="!entidade.nome" class="text text-danger">Digite um Valor</p>
+                    <input required type="date" class="form-control" ng-model="entidade.quando"/>
+                    <label>Escolha uma Data</label>
+                    <input required type="text" class="form-control" ng-model="entidade.valor"/>
+                    <p ng-show="!entidade.valor" class="text text-danger">Digite um Valor</p>
+                    <input required type="text" class="form-control" ng-model="entidade.caixa"/>
+                    <p ng-show="!entidade.caixa" class="text text-danger">Digite o Caixa</p>
                 </form>
             </div>
         </div>

@@ -4,14 +4,10 @@
         <button ui-sref="juridica" class="btn btn-default">Novo</button>
         <table class="table table-hover">
             <tr>
-                <td>Nome</td>
-                <td>Email</td>
                 <td>CNPJ</td>
                 <td>Opcoes</td>
             </tr>
             <tr ng-repeat="juridica in dados">
-                <td>{{juridica.nome}}</td>
-                <td>{{juridica.email}}</td>
                 <td>{{juridica.cnpj}}</td>
                 <td>
                     <button ui-sref="juridicaeditar({id: juridica.codigo})" class="btn btn-info">Editar</button>
