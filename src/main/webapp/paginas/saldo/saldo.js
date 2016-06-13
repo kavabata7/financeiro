@@ -1,6 +1,13 @@
 angular.module('app.saldo', [])
-        .controller('SaldoController', function ($scope, SaldoService, $state, entidade) {
+        .controller('SaldoController', function ($scope, SaldoService, $state, entidade, CaixaService) {
             $scope.entidade = entidade.data || {};
+
+            CaixaService.buscar()
+                    .then(function (response){
+                        $scope.caixas = response.data;
+                        console.log($scope.caixas)
+                    })
+            
 
             $scope.salvar = function (entidade) {
                 SaldoService.salvar(entidade)
