@@ -10,9 +10,9 @@
                 <td>Opcões</td>
             </tr>
             <tr ng-repeat="saldo in dados">
-                <td>{{saldo.quando}}</td>
+                <td>{{saldo.quando | date}}</td>
                 <td>{{saldo.valor}}</td>
-                <td>{{saldo.caixa}}</td>
+                <td>{{saldo.caixa.nome}}</td>
                 <td>
                     <button ui-sref="saldoeditar({id: saldo.codigo})" class="btn btn-info">Editar</button>
                     <button ng-click="remover(saldo.codigo)" class="btn btn-danger">Remover</button>

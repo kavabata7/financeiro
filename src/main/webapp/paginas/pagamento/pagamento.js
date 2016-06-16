@@ -1,10 +1,24 @@
 angular.module('app.pagamento', [])
-        .controller('PagamentoController', function ($scope, PagamentoService, $state, entidade) {
+        .controller('PagamentoController', function($scope, PagamentoService, $state, entidade, TituloService, FormaPagamentoService) {
             $scope.entidade = entidade.data || {};
 
-            $scope.salvar = function (entidade) {
+
+            TituloService.buscar()
+                    .then(function(response) {
+                        $scope.titulos = response.data;
+                        console.log($scope.titulos)
+                    })
+
+            FormaPagamentoService.buscar()
+                    .then(function(response) {
+                        $scope.formaPagamentos = response.data;
+                        console.log($scope.formaPagamentos)
+                    })
+
+
+            $scope.salvar = function(entidade) {
                 PagamentoService.salvar(entidade)
-                        .then(function (resposta) {
+                        .then(function(resposta) {
                             if (resposta.status == 200) {
                                 $state.go('pagamentolistagem')
                             }
@@ -12,11 +26,11 @@ angular.module('app.pagamento', [])
             }
 
         })
-        .controller('PagamentoListarController', function ($scope, PagamentoService) {
+        .controller('PagamentoListarController', function($scope, PagamentoService) {
 
-            $scope.remover = function (id) {
+            $scope.remover = function(id) {
                 PagamentoService.remover(id)
-                        .then(function (resposta) {
+                        .then(function(resposta) {
                             console.log(resposta)
                             if (resposta.status == 200) {
                                 $scope.listar();
@@ -26,9 +40,9 @@ angular.module('app.pagamento', [])
                         })
             }
 
-            $scope.listar = function () {
+            $scope.listar = function() {
                 PagamentoService.buscar()
-                        .then(function (resposta) {
+                        .then(function(resposta) {
                             $scope.dados = resposta.data;
                         })
             }
@@ -36,10 +50,10 @@ angular.module('app.pagamento', [])
             $scope.listar();
 
         })
-        .service('PagamentoService', function ($http) {
+        .service('PagamentoService', function($http) {
             var url = location.origin + '/financeiro/api/pagamento'
 
-            this.salvar = function (entidade) {
+            this.salvar = function(entidade) {
                 if (entidade.codigo) {
                     return $http.put(url.concat('/' + entidade.codigo), entidade);
                 } else {
@@ -47,11 +61,11 @@ angular.module('app.pagamento', [])
                 }
             }
 
-            this.buscar = function () {
+            this.buscar = function() {
                 return $http.get(url);
             }
 
-            this.remover = function (id) {
+            this.remover = function(id) {
                 return $http.delete(url.concat('/' + id));
             }
 

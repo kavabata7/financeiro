@@ -1,17 +1,17 @@
 angular.module('app.saldo', [])
-        .controller('SaldoController', function ($scope, SaldoService, $state, entidade, CaixaService) {
+        .controller('SaldoController', function($scope, SaldoService, $state, entidade, CaixaService) {
             $scope.entidade = entidade.data || {};
 
             CaixaService.buscar()
-                    .then(function (response){
+                    .then(function(response) {
                         $scope.caixas = response.data;
                         console.log($scope.caixas)
                     })
-            
 
-            $scope.salvar = function (entidade) {
+
+            $scope.salvar = function(entidade) {
                 SaldoService.salvar(entidade)
-                        .then(function (resposta) {
+                        .then(function(resposta) {
                             if (resposta.status == 200) {
                                 $state.go('saldolistagem')
                             }
@@ -19,11 +19,11 @@ angular.module('app.saldo', [])
             }
 
         })
-        .controller('SaldoListarController', function ($scope, SaldoService) {
+        .controller('SaldoListarController', function($scope, SaldoService) {
 
-            $scope.remover = function (id) {
+            $scope.remover = function(id) {
                 SaldoService.remover(id)
-                        .then(function (resposta) {
+                        .then(function(resposta) {
                             console.log(resposta)
                             if (resposta.status == 200) {
                                 $scope.listar();
@@ -33,9 +33,9 @@ angular.module('app.saldo', [])
                         })
             }
 
-            $scope.listar = function () {
+            $scope.listar = function() {
                 SaldoService.buscar()
-                        .then(function (resposta) {
+                        .then(function(resposta) {
                             $scope.dados = resposta.data;
                         })
             }
@@ -43,10 +43,10 @@ angular.module('app.saldo', [])
             $scope.listar();
 
         })
-        .service('SaldoService', function ($http) {
+        .service('SaldoService', function($http) {
             var url = location.origin + '/financeiro/api/saldo'
 
-            this.salvar = function (entidade) {
+            this.salvar = function(entidade) {
                 if (entidade.codigo) {
                     return $http.put(url.concat('/' + entidade.codigo), entidade);
                 } else {
@@ -54,11 +54,11 @@ angular.module('app.saldo', [])
                 }
             }
 
-            this.buscar = function () {
+            this.buscar = function() {
                 return $http.get(url);
             }
 
-            this.remover = function (id) {
+            this.remover = function(id) {
                 return $http.delete(url.concat('/' + id));
             }
 

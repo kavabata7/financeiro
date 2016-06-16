@@ -1,10 +1,26 @@
 angular.module('app.titulo', [])
-        .controller('TituloController', function ($scope, TituloService, $state, entidade) {
+        .controller('TituloController', function($scope, TituloService, $state, entidade, PessoaService, TipoService, CategoriaService) {
             $scope.entidade = entidade.data || {};
 
-            $scope.salvar = function (entidade) {
+            PessoaService.buscar()
+                    .then(function(response) {
+                        $scope.pessoas = response.data;
+                        console.log($scope.pessoas)
+                    })
+            TipoService.buscar()
+                    .then(function(response) {
+                        $scope.tipos = response.data;
+                        console.log($scope.tipos)
+                    })
+            CategoriaService.buscar()
+                    .then(function(response) {
+                        $scope.categorias = response.data;
+                        console.log($scope.categorias)
+                    })
+
+            $scope.salvar = function(entidade) {
                 TituloService.salvar(entidade)
-                        .then(function (resposta) {
+                        .then(function(resposta) {
                             if (resposta.status == 200) {
                                 $state.go('titulolistagem')
                             }
@@ -12,11 +28,11 @@ angular.module('app.titulo', [])
             }
 
         })
-        .controller('TituloListarController', function ($scope, TituloService) {
+        .controller('TituloListarController', function($scope, TituloService) {
 
-            $scope.remover = function (id) {
+            $scope.remover = function(id) {
                 TituloService.remover(id)
-                        .then(function (resposta) {
+                        .then(function(resposta) {
                             console.log(resposta)
                             if (resposta.status == 200) {
                                 $scope.listar();
@@ -26,9 +42,9 @@ angular.module('app.titulo', [])
                         })
             }
 
-            $scope.listar = function () {
+            $scope.listar = function() {
                 TituloService.buscar()
-                        .then(function (resposta) {
+                        .then(function(resposta) {
                             $scope.dados = resposta.data;
                         })
             }
@@ -36,10 +52,10 @@ angular.module('app.titulo', [])
             $scope.listar();
 
         })
-        .service('TituloService', function ($http) {
+        .service('TituloService', function($http) {
             var url = location.origin + '/financeiro/api/titulo'
 
-            this.salvar = function (entidade) {
+            this.salvar = function(entidade) {
                 if (entidade.codigo) {
                     return $http.put(url.concat('/' + entidade.codigo), entidade);
                 } else {
@@ -47,11 +63,11 @@ angular.module('app.titulo', [])
                 }
             }
 
-            this.buscar = function () {
+            this.buscar = function() {
                 return $http.get(url);
             }
 
-            this.remover = function (id) {
+            this.remover = function(id) {
                 return $http.delete(url.concat('/' + id));
             }
 
