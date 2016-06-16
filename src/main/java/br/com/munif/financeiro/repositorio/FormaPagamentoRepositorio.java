@@ -15,7 +15,8 @@ public class FormaPagamentoRepositorio extends SuperEntidadeRepositorio<FormaPag
     @Override
     public List<FormaPagamento> consultar() {
         EntityManager em = Persistencia.getInstancia().getEntityManager();
-        Query consulta = em.createQuery("from FormaPagamento");
+        Query consulta = em.createQuery("from FormaPagamento obj order obj.nome");
         return consulta.getResultList();
     }
+
 }
