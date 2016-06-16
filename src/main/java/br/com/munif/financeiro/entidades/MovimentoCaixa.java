@@ -17,10 +17,13 @@ public class MovimentoCaixa extends SuperEntidade {
     private Date quando;
 
     private BigDecimal valor;
+    
     @ManyToOne
     private Caixa caixa;
+    
     @OneToOne
     private MovimentoCaixa outro;
+    
     @ManyToOne
     private Pagamento pagamento;
 

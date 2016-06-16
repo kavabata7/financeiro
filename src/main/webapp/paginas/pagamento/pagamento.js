@@ -1,12 +1,12 @@
 angular.module('app.pagamento', [])
-        .controller('PagamentoController', function($scope, PagamentoService, $state, entidade, TituloService, FormaPagamentoService) {
+        .controller('PagamentoController', function($scope, PagamentoService, $state, entidade, TipoTituloService, FormaPagamentoService) {
             $scope.entidade = entidade.data || {};
 
 
-            TituloService.buscar()
+            TipoTituloService.buscar()
                     .then(function(response) {
-                        $scope.titulos = response.data;
-                        console.log($scope.titulos)
+                        $scope.tipoTitulos = response.data;
+                        console.log($scope.tipoTitulos)
                     })
 
             FormaPagamentoService.buscar()

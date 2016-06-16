@@ -1,12 +1,7 @@
 angular.module('app.formaPagamento', [])
-        .controller('FormaPagamentoController', function($scope, FormaPagamentoService, $state, entidade, PagamentoService) {
+        .controller('FormaPagamentoController', function($scope, FormaPagamentoService, $state, entidade) {
             $scope.entidade = entidade.data || {};
 
-            PagamentoService.buscar()
-                    .then(function(response) {
-                        $scope.pagamentos = response.data;
-                        console.log($scope.pagamentos)
-                    })
 
 
             $scope.salvar = function(entidade) {

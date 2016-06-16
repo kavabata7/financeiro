@@ -8,14 +8,14 @@
                     <p ng-show="!entidade.quando" class="text text-danger">Escolha uma Data</p></br>
                     <input required type="text" class="form-control" ng-model="entidade.valor"/>
                     <p ng-show="!entidade.valor" class="text text-danger">Digite um Valor</p></br>
-                    <input required type="text" class="form-control" ng-model="entidade.outro"/>
-                    <p ng-show="!entidade.outro" class="text text-danger">Digite o Movimento</p></br>
-                    <select class="form-control" ng-model="entidade.pagamento">
-                        <option>Transferencia</option>
-                        <option>Desposito</option>
-                        <option>Dinheiro</option>
-                        <option>Boleto</option>
-                        <option>Cartão</option>
+                    <select class="form-control" ng-options="item as item.nome for item in caixas"
+                            ng-model="entidade.caixa">
+                    </select>
+                    <p ng-show="!entidade.caixa" class="text text-danger">Selecione um Caixa</p></br>
+                    <input required type="text" class="form-control" ng-model="entidade.movimentoCaixa"/>
+                    <p ng-show="!entidade.movimentoCaixa" class="text text-danger">Digite outro tipo de movimento</p></br>
+                    <select class="form-control" ng-options="item as item.nome for item in FormaPagamentos"
+                            ng-model="entidade.formaPagamento">
                     </select>
                     <p ng-show="!entidade.outro" class="text text-danger">Selecione uma Forma de Pagamento</p></br>
                     <select class="form-control" ng-model="entidade.realizado">
@@ -26,11 +26,10 @@
                     <p ng-show="!entidade.outro" class="text text-danger">Selecione um Status</p></br>
                     <input required type="text" class="form-control" ng-model="entidade.historico"/>
                     <p ng-show="!entidade.historico" class="text text-danger">Selecione um Historico de Caixas</p></br>
-                    <select class="form-control" ng-model="entidade.natureza">
-                        <option>Pagamento</option>
-                        <option>Transferencia</option>
+                    <select class="form-control" ng-options="item as item.natureza for item in naturezas"
+                            ng-model="entidade.natureza">
                     </select>
-                    <p ng-show="!entidade.outro" class="text text-danger">Selecione a Natureza do Movimento</p></br>
+                    <p ng-show="!entidade.natureza" class="text text-danger">Selecione a Natureza do Movimento</p>
                 </form>
             </div>
         </div>

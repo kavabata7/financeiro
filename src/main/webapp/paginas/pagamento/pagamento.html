@@ -5,22 +5,18 @@
             <div class="row container-fluid">
                 <form name="PagamentoForm"></br>
                     <input required type="date" class="form-control" ng-model="entidade.quando"/>
-                    <p ng-show="!entidade.outro" class="text text-danger">Escolha uma Data</p></br>
+                    <p ng-show="!entidade.pagamento" class="text text-danger">Escolha uma Data</p></br>
                     <input required type="text" class="form-control" ng-model="entidade.valor"/>
-                    <p ng-show="!entidade.valor" class="text text-danger">Digite um Valor</p></br>
-                    <select class="form-control" ng-model="entidade.titulo">
-                        <option>PAGAR</option>
-                        <option>RECEBER</option>
+                    <p ng-show="!entidade.pagamento" class="text text-danger">Digite um Valor</p></br>
+                    <select class="form-control" ng-options="item as item.TipoTitulo for item in TipoTitulos"
+                            ng-model="entidade.tipoTitulo">
+                        
                     </select>
-                    <p ng-show="!entidade.outro" class="text text-danger">Selecione um Tipo</p></br>
-                    <select class="form-control" ng-model="entidade.formaPagamento">
-                        <option>Transferencia</option>
-                        <option>Desposito</option>
-                        <option>Dinheiro</option>
-                        <option>Cartão</option>
-                        <option>Boleto</option>
+                    <p ng-show="!entidade.tipoTitulo" class="text text-danger">Selecione um Tipo</p></br>
+                    <select class="form-control" ng-options="item as item.formaPagamento for item in formasPagamentos"
+                            ng-model="entidade.formaPagamento">
                     </select>
-                    <p ng-show="!entidade.outro" class="text text-danger">Selecione a Forma de Pagamento</p></br>
+                    <p ng-show="!entidade.formaPagamento" class="text text-danger">Selecione a Forma de Pagamento</p>
                 </form>
             </div>
         </div>

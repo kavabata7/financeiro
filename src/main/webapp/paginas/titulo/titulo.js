@@ -1,5 +1,5 @@
 angular.module('app.titulo', [])
-        .controller('TituloController', function($scope, TituloService, $state, entidade, PessoaService, TipoService, CategoriaService) {
+        .controller('TituloController', function($scope, TituloService, $state, entidade, PessoaService, TipoTituloService, CategoriaService) {
             $scope.entidade = entidade.data || {};
 
             PessoaService.buscar()
@@ -7,10 +7,10 @@ angular.module('app.titulo', [])
                         $scope.pessoas = response.data;
                         console.log($scope.pessoas)
                     })
-            TipoService.buscar()
+            TipoTituloService.buscar()
                     .then(function(response) {
-                        $scope.tipos = response.data;
-                        console.log($scope.tipos)
+                        $scope.tipoTitulos = response.data;
+                        console.log($scope.tipoTitulos)
                     })
             CategoriaService.buscar()
                     .then(function(response) {

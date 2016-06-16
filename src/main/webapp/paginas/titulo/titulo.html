@@ -5,21 +5,21 @@
             <div class="row container-fluid">
                 <form name="TituloForm"></br>
                     <input required type="date" class="form-control" ng-model="entidade.dataVencimento"/>
-                    <p ng-show="!entidade.outro" class="text text-danger">Escolha uma Data</p></br>
-                    <select class="form-control" ng-model="entidade.pessoa">
-                        <option>Fisica</option>
-                        <option>Juridica</option>
+                    <p ng-show="!entidade.titulo" class="text text-danger">Escolha uma Data</p></br>
+                    <select class="form-control" ng-options="item as item.pessoa for item in pessoas"
+                            ng-model="entidade.pessoa">
                     </select>
-                    <p ng-show="!entidade.outro" class="text text-danger">Selecione o Tipo de Pessoa</p></br>
+                    <p ng-show="!entidade.pessoa" class="text text-danger">Selecione o Tipo de Pessoa</p></br>
                     <input required type="text" class="form-control" ng-model="entidade.valor"/>
                     <p ng-show="!entidade.valor" class="text text-danger">Digite um Valor</p></br>
-                    <select class="form-control" ng-model="entidade.tipo">
-                        <option>PAGAR</option>
-                        <option>RECEBER</option>
+                    <select class="form-control" ng-options="item as item.tipoTitulo for item in tipoTitulos"
+                            ng-model="entidade.tipoTitulo">
                     </select>
-                    <p ng-show="!entidade.outro" class="text text-danger">Selecione o Tipo de Titulo</p></br>
-                    <input required type="text" class="form-control" ng-model="entidade.categoria"/>
-                    <p ng-show="!entidade.categoria" class="text text-danger">Digite uma Categoria</p></br>
+                    <p ng-show="!entidade.tipoTitulo" class="text text-danger">Selecione um Tipo de Titulo</p></br>
+                    <select class="form-control" ng-options="item as item.categoria for item in categorias"
+                            ng-model="entidade.categoria">
+                    </select>
+                    <p ng-show="!entidade.categoria" class="text text-danger">Selecione uma Categoria</p>
                 </form>
             </div>
         </div>

@@ -1,5 +1,5 @@
 angular.module('app.movimentoCaixa', [])
-        .controller('MovimentoCaixaController', function($scope, MovimentoCaixaService, $state, entidade, CaixaService, PagamentoService, NaturezaService) {
+        .controller('MovimentoCaixaController', function($scope, MovimentoCaixaService, $state, entidade, CaixaService, FormaPagamentoService, NaturezaService) {
             $scope.entidade = entidade.data || {};
 
 
